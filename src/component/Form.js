@@ -126,6 +126,7 @@ function Form() {
                       style: {
                         borderRadius: '10px', 
                         height:'40px',
+                        color:'black',
                         marginBottom:'10px',
                         border:"2px solid black "
                       },
@@ -143,6 +144,7 @@ function Form() {
                       style: {
                         borderRadius: '10px', 
                         height:'40px',
+                        color:'black',
                         marginBottom:'10px',
                         border:"2px solid black "
                       },
@@ -162,6 +164,7 @@ function Form() {
                       style: {
                         borderRadius: '10px', 
                         height:'40px',
+                        color:'black',
                         marginBottom:'10px',
                         border:"2px solid black "
                       },
@@ -183,6 +186,7 @@ function Form() {
                         width='180px'
                         borderRadius='20px'
                         marginBottom='10px'
+                        color='black'
                         >
                             <input {...getInputProps()} />
                             {!values.picture ? (<p>Add a picture</p>):(
@@ -205,6 +209,7 @@ function Form() {
                 InputProps={{
                       style: {
                         borderRadius: '10px', 
+                        color:'black',
                         height:'40px',
                         marginBottom:'10px',
                         border:"2px solid black "
