@@ -252,7 +252,11 @@ function Form() {
                   textDecoration:"underLine",
                   color:'#40E0D0',
                   fontSize:'11px',
-                  padding:'8px'
+                  padding:'8px',
+                  '&:hover':{
+                    cursor:'pointer'
+                  }
+                  
                 }}
                 >
                     {isLogin ? "Don't have Account? click here": "Already have Account? click here"}
