@@ -12,9 +12,10 @@ function Profile() {
   console.log(userId)
   const token = useSelector((state)=>state.token)
   const dispatch = useDispatch()
+  const apiKey = process.env.REACT_APP_API_KEY;
   const getUser = async () =>{
     try{
-    const res = await fetch(`http://localhost:5000/users/${userId}`,{
+    const res = await fetch(`${apiKey}/users/${userId}`,{
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     })

@@ -11,11 +11,12 @@ function Feed({friendUser,isMobile}) {
   const friend = useSelector((state)=> state.friendPost)
   const user = useSelector((state)=> state.posts)
   const posts = friendUser ? friend : user
-  console.log(posts)
+  
   const dispatch = useDispatch()
+  const apiKey = process.env.REACT_APP_API_KEY;
   const getPosts = async () => {
     try{
-    const response = await fetch("http://localhost:5000/posts", {
+    const response = await fetch(`${apiKey}/posts`, {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     });

@@ -15,9 +15,10 @@ function Sidebar({friendUser}) {
     const friendId = useSelector((state)=>state.friendId)
     const navigate = useNavigate()
     const isMobile = useMediaQuery('(max-width: 600px')
+    const apiKey = process.env.REACT_APP_API_KEY;
     const addFriend= async () =>{
       try{
-      const res = await fetch(`http://localhost:5000/users/${userId}/${friendId}`,{
+      const res = await fetch(`${apiKey}/users/${userId}/${friendId}`,{
       method: "PATCH",
       headers: { Authorization: `Bearer ${token}` },
       

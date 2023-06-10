@@ -8,7 +8,8 @@ function Login() {
       flexDirection:"column",
       alignItems:'center',
       justifyContent:"ceter",
-      marginTop:"20px"
+      marginTop:"20px",
+      height:"100vh"
     }}>
         <Box sx={{
           display:'flex',

@@ -15,12 +15,13 @@ function UserWidget({friendUser}) {
   const friend = useSelector((state)=>state.friend) 
   const userPosts = useSelector((state)=>state.userPost)
   const friendPosts = useSelector((state)=> state.friendPost)
-
+  const apiKey = process.env.REACT_APP_API_KEY;
   const posts = useMemo(()=>friendUser ? friendPosts : userPosts,[])
 
   const getUserPosts = async ()=>{
+
     try{
-    const response = await fetch(`http://localhost:5000/posts/${userId}/posts`,{
+    const response = await fetch(`${apiKey}/posts/${userId}/posts`,{
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     })

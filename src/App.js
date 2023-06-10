@@ -9,7 +9,9 @@ import Home from 'page/Home';
 import Login from 'page/Login';
 import Profile from 'page/Profile';
 import { ToastContainer } from 'react-toastify';
+import dotenv from 'dotenv'
 function App() {
+  dotenv.config();
   const mode = useSelector((state)=> state.mode);
   const theme = useMemo(()=> createTheme(themeSettings(mode)),[])
   const isAuth = Boolean(useSelector((state)=>state.token))

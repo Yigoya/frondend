@@ -16,7 +16,7 @@ function Friends({friendUser}) {
   const userId = useSelector((state)=>state.user._id)
   const id = useMemo(()=> friendUser ? friendId : userId)
   const dispatch = useDispatch()
-
+  const apiKey = process.env.REACT_APP_API_KEY;
   const getFriend = async()=>{
     
     const config = {
@@ -25,7 +25,7 @@ function Friends({friendUser}) {
       },
     }
   try{
-    const res = await axios.get(`http://localhost:5000/users/${id}/friends`, config)
+    const res = await axios.get(`${apiKey}/users/${id}/friends`, config)
   
     const data = await res.data
     console.log(data)

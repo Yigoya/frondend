@@ -8,6 +8,7 @@ import { Box, Button, IconButton, InputBase, useTheme } from '@mui/material';
 import Dropzone from 'react-dropzone';
 import { DeleteOutlined } from '@mui/icons-material';
 import { bgcolor } from '@mui/system';
+import { toast } from 'react-toastify';
 
 function HandlePost() {
     const theme = useTheme()
@@ -20,7 +21,7 @@ function HandlePost() {
     const { _id, picturePath } = useSelector((state)=> state.user)
     console.log(token, _id)
   const handlePost = async () =>{
-    
+    const apiKey = process.env.REACT_APP_API_KEY;
     const formData = new FormData()
     formData.append("userId",_id);
     formData.append("description", post);
@@ -28,12 +29,13 @@ function HandlePost() {
         formData.append("picture",image)
         formData.append("picturePath",image.name)
     }
-    
-    const res = await fetch(`http://localhost:5000/posts`,{
+    try{
+    const res = await fetch(`${apiKey}/posts`,{
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
         body: formData,
     })
+  
     
     const posts = await res.json()
     console.log(posts)
@@ -41,6 +43,9 @@ function HandlePost() {
     dispatch(setNewPost({posts:posts}))
     setImage(false)
     setPost(null)
+  }catch(e){
+    toast.error('check your internet')
+  }
   }
    
 

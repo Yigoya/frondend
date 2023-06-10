@@ -17,8 +17,7 @@ function PostWidget({
   const [long, setLong] = useState(false)
   const descript = String(description).slice(0,100)
   const isLong = String(description).length > 100
-  let isString = false
-  
+  const apiKey = process.env.REACT_APP_API_KEY;
   return (
     <WidgetWrapper width='340px'
     m='10px'><Box sx={{
@@ -35,7 +34,7 @@ function PostWidget({
         <img width='100%'
             height='auto'
             style={{borderRadius:'20px'}}
-            src={`http://localhost:5000/assets/${picturePath}`} />
+            src={`${apiKey}/assets/${picturePath}`} />
         <Friend 
           friendId={postUserId}
           name={name}

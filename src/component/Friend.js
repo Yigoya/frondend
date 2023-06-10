@@ -18,9 +18,10 @@ function Friend({ postId, friendId, name, subtitle, userPicturePath, comments, l
   const likeCount = Object.keys(likes).length;
   const navigate = useNavigate()
   const dispatch = useDispatch()
+  const apiKey = process.env.REACT_APP_API_KEY;
   const patchLike = async ()=>{
     try{
-    const res = await fetch(`http://localhost:5000/posts/${postId}/like`,{
+    const res = await fetch(`${apiKey}/posts/${postId}/like`,{
       method: "PATCH",
       headers: {
         Authorization: `Bearer ${token}`,

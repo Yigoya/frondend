@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
 
 const UserImage = ({ image, size = "70px", margin = '0' }) => {
+  const apiKey = process.env.REACT_APP_API_KEY;
   return (
     <Box m={`0 0 ${margin} 0`} borderRadius='50%' sx={{
       border:'2px solid red',
@@ -13,7 +14,7 @@ const UserImage = ({ image, size = "70px", margin = '0' }) => {
         height={size}
         alt="user"
         
-        src={`http://localhost:5000/assets/${image}`}
+        src={`${apiKey}/assets/${image}`}
       />
       </Box>
     </Box>

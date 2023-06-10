@@ -40,11 +40,11 @@ function Form() {
     const [page, setPage] = useState('login')
     const isLogin = page === 'login'
     const isRegister = page === 'register'
-
+    const apiKey = process.env.REACT_APP_API_KEY;
     const login = async (user)=>{
       
         try{
-          const res = await axios.post('http://localhost:5000/auth/login',user)
+          const res = await axios.post(`${apiKey}/auth/login`,user)
           const data = res.data  
           console.log(data)
           dispatch(setLogin(data))
@@ -60,7 +60,7 @@ function Form() {
   const register =async (user)=>{
       try{
         console.log(user)
-        const res = await axios.post('http://localhost:5000/auth/register',user)
+        const res = await axios.post(`${apiKey}/auth/register`,user)
         const data = res.data  
           
         if(data){
@@ -126,7 +126,8 @@ function Form() {
                       style: {
                         borderRadius: '10px', 
                         height:'40px',
-                        marginBottom:'10px'
+                        marginBottom:'10px',
+                        border:"2px solid black "
                       },
                   }}
                 />
@@ -142,7 +143,8 @@ function Form() {
                       style: {
                         borderRadius: '10px', 
                         height:'40px',
-                        marginBottom:'10px'
+                        marginBottom:'10px',
+                        border:"2px solid black "
                       },
                   }}
                 />
@@ -160,7 +162,8 @@ function Form() {
                       style: {
                         borderRadius: '10px', 
                         height:'40px',
-                        marginBottom:'10px'
+                        marginBottom:'10px',
+                        border:"2px solid black "
                       },
                   }}
                 />
@@ -203,7 +206,8 @@ function Form() {
                       style: {
                         borderRadius: '10px', 
                         height:'40px',
-                        marginBottom:'10px'
+                        marginBottom:'10px',
+                        border:"2px solid black "
                       },
                   }}
                 />
@@ -220,7 +224,8 @@ function Form() {
                       style: {
                         borderRadius: '10px', 
                         height:'40px',
-                        marginBottom:'10px'
+                        marginBottom:'10px',
+                        border:"2px solid black "
                       },
                   }}
                 />
