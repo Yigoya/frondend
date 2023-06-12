@@ -14,7 +14,9 @@ function Feed({friendUser,isMobile}) {
   
   const dispatch = useDispatch()
   const apiKey = process.env.REACT_APP_API_KEY;
+  console.log(apiKey,token)
   const getPosts = async () => {
+
     try{
     const response = await fetch(`${apiKey}/posts`, {
       method: "GET",
@@ -28,6 +30,7 @@ function Feed({friendUser,isMobile}) {
     toast.error("check your internet please")
    }
   };
+
   useEffect(()=>{
     getPosts()
     

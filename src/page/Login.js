@@ -26,7 +26,7 @@ function Login() {
               }} >
                 studPage.
             </Typography>
-            <Typography>Welcome to studPage, the Page made for student</Typography>
+            <Typography color='black'>Welcome to studPage, the Page made for student</Typography>
 
         </Box>
         

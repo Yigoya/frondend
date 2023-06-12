@@ -127,8 +127,12 @@ function Form() {
                         borderRadius: '10px', 
                         height:'40px',
                         color:'black',
+                        padding: '0 0 0 10px',
                         marginBottom:'10px',
-                        border:"2px solid black "
+                        border:"2px solid black ",
+                        '&::placeholder':{
+                          color:"black"
+                        }
                       },
                   }}
                 />
@@ -145,8 +149,12 @@ function Form() {
                         borderRadius: '10px', 
                         height:'40px',
                         color:'black',
+                        padding: '0 0 0 10px',
                         marginBottom:'10px',
-                        border:"2px solid black "
+                        border:"2px solid black ",
+                        '&::placeholder':{
+                          color:"black"
+                        }
                       },
                   }}
                 />
@@ -165,8 +173,12 @@ function Form() {
                         borderRadius: '10px', 
                         height:'40px',
                         color:'black',
+                        padding: '0 0 0 10px',
                         marginBottom:'10px',
-                        border:"2px solid black "
+                        border:"2px solid black ",
+                        '&::placeholder':{
+                          color:"black"
+                        }
                       },
                   }}
                 />
@@ -209,10 +221,14 @@ function Form() {
                 InputProps={{
                       style: {
                         borderRadius: '10px', 
-                        color:'black',
                         height:'40px',
+                        color:'black',
+                        padding: '0 0 0 10px',
                         marginBottom:'10px',
-                        border:"2px solid black "
+                        border:"2px solid black ",
+                        '&::placeholder':{
+                          color:"black"
+                        }
                       },
                   }}
                 />
@@ -229,8 +245,13 @@ function Form() {
                       style: {
                         borderRadius: '10px', 
                         height:'40px',
+                        color:'black',
+                        padding: '0 0 0 10px',
                         marginBottom:'10px',
-                        border:"2px solid black "
+                        border:"2px solid black ",
+                        '&::placeholder':{
+                          color:"black"
+                        }
                       },
                   }}
                 />
